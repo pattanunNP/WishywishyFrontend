@@ -1,0 +1,3 @@
+[build]
+          command = "npm ruun build && npm run export"
+          publush "out"
