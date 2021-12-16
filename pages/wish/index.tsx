@@ -15,44 +15,47 @@ const Wish: NextPage = () => {
       <BackButton />
       <main className="min-h-screen bg-navy-blue-800 flex flex-col justify-center relative overflow-hidden">
         {/* <Snowfall snowflakeCount={100} /> */}
-        <div className="container mx-2">
-          <div className="flex flex-col items-center justify-center w-64">
-            <h1 className="font-Itim text-center text-white  text-xl font-semibold">
-              คำอวยพรที่ได้รับ
-            </h1>
-          </div>
-          <div className="flex flex-row items-center justify-center w-full">
-            <div className="grid grid-rows-2 xs:grid-cols-1 gap-2 ">
-              <div className="m-2 mt-5 flex flex-col items-center justify-center bg-white w-96 xs:w-3/4 h-full shadow-lg shadow-blue-300 p-4 rounded-xl">
-                <h1 className="font-Itim text-left font-semibold">
-                  ถึง&nbsp;<span>Arm</span>
-                </h1>
-                <p className="p-2 w-full h-full resize-y rounded-lg font-Itim t">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Itaque at, odit iusto amet reprehenderit non harum modi
-                  laborum aliquid labore architecto molestiae quam similique
-                  assumenda, necessitatibus eligendi nemo quidem blanditiis
-                  tenetur
-                </p>
-                <h1 className="font-Itim text-left font-semibold">
-                  จาก&nbsp;<span>คนแปลกหน้า</span>
-                </h1>
-              </div>
-              <div className="m-2 mt-5 flex flex-col items-center justify-center bg-white w-96 xs:w-3/4 h-full shadow-lg shadow-blue-300 p-4 rounded-xl">
-                <h1 className="font-Itim text-left font-semibold">
-                  ถึง&nbsp;<span>Arm</span>
-                </h1>
-                <p className="p-2 w-full h-full resize-y rounded-lg font-Itim t">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Itaque at, odit iusto amet reprehenderit non harum modi
-                  laborum aliquid labore architecto molestiae quam similique
-                  assumenda, necessitatibus eligendi nemo quidem blanditiis
-                  tenetur
-                </p>
-                <h1 className="font-Itim text-left font-semibold">
-                  จาก&nbsp;<span>คนแปลกหน้า</span>
-                </h1>
-              </div>
+        <div className="container mx-auto">
+          <div className="m-2 mt-5 flex flex-col space-y-5 items-start justify-centerw-full h-full overflow-y-auto">
+            <div className=" bg-white border-black border-r-8 border-b-8 p-4 rounded-xl">
+              <h1 className="font-Itim text-left font-semibold">
+                ถึง&nbsp;<span>Arm</span>
+              </h1>
+              <p className="p-2 w-full h-full rounded-lg font-Itim">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+                at, odit iusto amet reprehenderit non harum modi laborum aliquid
+                labore architecto molestiae quam similique assumenda,
+                necessitatibus eligendi nemo quidem blanditiis tenetur
+                exercitationem omnis praesentium deserunt. Possimus dolores quod
+                voluptates ab minus sequi illum quae, provident porro harum sunt
+                labore veniam temporibus architecto asperiores autem sit
+                debitis. Impedit eum nihil, quaerat eveniet ipsam minus nisi
+                assumenda incidunt ad molestiae magni quibusdam, provident ut
+                reiciendis
+              </p>
+              <h1 className="font-Itim text-left font-semibold">
+                จาก&nbsp;<span>คนแปลกหน้า</span>
+              </h1>
+            </div>
+            <div className=" bg-white  border-black border-r-8 border-b-8  p-4 rounded-xl">
+              <h1 className="font-Itim text-left font-semibold">
+                ถึง&nbsp;<span>Arm</span>
+              </h1>
+              <p className="p-2 w-full h-full  rounded-lg font-Itim">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+                at, odit iusto amet reprehenderit non harum modi laborum aliquid
+                labore architecto molestiae quam similique assumenda,
+                necessitatibus eligendi nemo quidem blanditiis tenetur
+                exercitationem omnis praesentium deserunt. Possimus dolores quod
+                voluptates ab minus sequi illum quae, provident porro harum sunt
+                labore veniam temporibus architecto asperiores autem sit
+                debitis. Impedit eum nihil, quaerat eveniet ipsam minus nisi
+                assumenda incidunt ad molestiae magni quibusdam, provident ut
+                reiciendis
+              </p>
+              <h1 className="font-Itim text-left font-semibold">
+                จาก&nbsp;<span>คนแปลกหน้า</span>
+              </h1>
             </div>
           </div>
         </div>

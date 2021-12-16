@@ -21,11 +21,11 @@ const Receive: NextPage = () => {
               คุณได้รับคำอวยพร&nbsp;จาก&nbsp;xxxx
             </h1>
           </div>
-          <div className="m-2 mt-5 flex flex-col items-start justify-center bg-white w-full h-full shadow-lg shadow-blue-300 p-4 rounded-xl overflow-y-auto">
+          <div className="mt-5 flex flex-col items-start justify-center bg-white w-full h-full border-black border-r-8 border-b-8  p-4 rounded-xl ">
             <h1 className="font-Itim text-left font-semibold">
               ถึง&nbsp;<span>Arm</span>
             </h1>
-            <p className="p-2 w-full h-full resize-y rounded-lg font-Itim">
+            <p className="p-2 w-full h-full ounded-lg font-Itim">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
               at, odit iusto amet reprehenderit non harum modi laborum aliquid
               labore architecto molestiae quam similique assumenda,
@@ -40,7 +40,7 @@ const Receive: NextPage = () => {
               จาก&nbsp;<span>คนแปลกหน้า</span>
             </h1>
           </div>
-          <div className="mt-10 flex flex-col items-center justify-center">
+          <div className="mt-10  mb-5 flex flex-col items-center justify-center">
             <div className="btn-primary2">บันทึกเก็บไว้</div>
           </div>
         </div>

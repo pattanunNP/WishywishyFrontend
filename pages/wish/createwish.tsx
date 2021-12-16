@@ -16,17 +16,17 @@ const Create: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <BackButton />
-      <main className="min-h-screen bg-navy-blue-800 py-6 flex flex-col justify-center relative overflow-y-scroll">
+      <main className="min-h-screen bg-navy-blue-800 flex flex-col justify-center relative overflow-hidden">
         {/* <Snowfall snowflakeCount={100} /> */}
 
-        <div className="container mx-2">
+        <div className="container mx-auto">
           <div className="flex flex-col items-center justify-center">
             <h1 className="font-Itim  text-white text-2xl font-bold">
               ส่งคำอวยพร ถึง คนแปลกหน้า
             </h1>
           </div>
 
-          <div className="m-2 mt-5 flex flex-col items-start justify-center bg-white w-full h-full shadow-lg shadow-blue-300 p-4 rounded-xl">
+          <div className="mt-5 flex flex-col items-start justify-center bg-white w-full h-full border-black border-r-8 border-b-8  p-4 rounded-xl">
             <h1 className="font-Itim text-left font-semibold">
               ถึง <span>คนแปลกหน้า</span>
             </h1>
@@ -54,7 +54,7 @@ const Create: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className="mt-10 flex flex-col items-center justify-center">
+        <div className="mt-10 mb-5 flex flex-col items-center justify-center">
           <div className="btn-primary1"> ส่งคำอวยพร</div>
         </div>
       </main>
