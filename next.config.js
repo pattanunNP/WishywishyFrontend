@@ -1,4 +1,10 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
-  reactStrictMode: true,
-}
+const withPlugins = require('next-compose-plugins');
+
+const withFonts = require("next-fonts");
+module.exports = withPlugins([
+], {
+  images: {
+    domains: ['images.unsplash.com'],
+  }
+});

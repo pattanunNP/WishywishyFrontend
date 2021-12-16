@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+
+@media screen and (display-mode: standalone) {
+  header {
+    height: 88px !important;
+  }
+}
+
+@tailwind utilities;
+
+.btn-primary1 {
+  @apply font-Itim font-semibold mt-5 px-3 py-3 bg-gradient-to-r from-christmas-red-700 to-christmas-red-500 hover:bg-christmas-red-700 xs:w-52 sm:w-52 md:w-64 h-12 rounded-3xl text-center ring-4 ring-white text-white cursor-pointer;
+}
+.btn-primary2 {
+  @apply font-Itim  font-semibold mt-5 px-3 py-3 bg-gradient-to-r from-christmas-green-700 to-christmas-green-500 hover:bg-christmas-red-700 xs:w-52 sm:w-52 md:w-64 h-12 rounded-3xl text-center ring-4 ring-white text-white cursor-pointer;
+}
+
+.btn-primary3 {
+  @apply font-Itim font-semibold mt-5 px-3 py-3 bg-gradient-to-r from-christmas-yellow-700 to-christmas-yellow-500 hover:bg-christmas-red-700 xs:w-52 sm:w-52 md:w-64 h-12 rounded-3xl text-center ring-4 ring-white text-white cursor-pointer;
+}
