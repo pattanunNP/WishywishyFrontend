@@ -2,18 +2,18 @@
 const withPlugins = require('next-compose-plugins');
 
 const withFonts = require("next-fonts");
-module.exports = withPlugins([
-], {
+module.exports = {
   images: {
-    domains: ['images.unsplash.com'],
-  }, exportPathMap: async function (
+    domains: ["res.cloudinary.com", "profile.line-scdn.net"]
+  },
+  exportPathMap: async function (
     defaultPathMap,
     { dev, dir, outDir, distDir, buildId }
   ) {
     return {
       '/': { page: '/' },
-      '/wish': { page: '/wish' },
-      '/p/hello-nextjs': { page: '/post', query: { title: 'hello-nextjs' } },
+      '/wish': { page: 'wish' },
+
     }
   },
-});
+}

@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import Router from "next/router";
 import { useState } from "react";
 import Loading from "../components/loading";
+import { UserContextProvider } from "../contexts/UserContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [isLoading, setIsLoading] = useState(false);
@@ -16,7 +17,13 @@ function MyApp({ Component, pageProps }: AppProps) {
     setIsLoading(false);
   });
 
-  return <>{isLoading ? <Loading /> : <Component {...pageProps} />}</>;
+  return (
+    <div>
+      <UserContextProvider>
+        {isLoading ? <Loading /> : <Component {...pageProps} />}
+      </UserContextProvider>
+    </div>
+  );
 }
 
 export default MyApp;

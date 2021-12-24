@@ -1,10 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Snowfall from "react-snowfall";
+import { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 import BackButton from "../../components/back";
 import Footer from "../../components/footer";
 
 const Receive: NextPage = () => {
+  const { profile } = useContext(UserContext);
   return (
     <div>
       <Head>
@@ -23,7 +25,7 @@ const Receive: NextPage = () => {
           </div>
           <div className="mt-5 flex flex-col items-start justify-center bg-white w-full h-full border-black border-r-8 border-b-8  p-4 rounded-xl ">
             <h1 className="font-Itim text-left font-semibold">
-              ถึง&nbsp;<span>Arm</span>
+              ถึง&nbsp;<span>{profile?.displayName}</span>
             </h1>
             <p className="p-2 w-full h-full ounded-lg font-Itim">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque

@@ -5,7 +5,7 @@ export default function BackButton() {
   const Router = useRouter();
   return (
     <div
-      className="px-3 py-3 text-white bg-navy-blue-800 border-none"
+      className="px-3 py-3 text-white bg-navy-blue-800 border-git"
       onClick={() => Router.back()}
     >
       <IoChevronBackSharp size="32" />
