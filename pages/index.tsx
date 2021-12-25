@@ -7,13 +7,22 @@ import { UserContext } from "../contexts/UserContext";
 import Footer from "../components/footer";
 
 const Home: NextPage = () => {
-  const { profile } = useContext(UserContext);
+  const { profile, accessToken } = useContext(UserContext);
+  // console.log(accessToken);
 
   return (
     <div>
       <Head>
-        <title>Givemeawish</title>
+        <title>Wishy Wishy</title>
+        <meta property="og:title" content="Wishy Wihshy" key="title" />
         <meta name="description" content="Givemeawish" />
+        <meta property="og:image" content="/logo.png" key="ogimage" />
+        <meta property="og:site_name" content="wishy wishy" key="ogsitename" />
+        <meta
+          property="og:description"
+          content="ส่งพรปีใหม่ถึงคนแปลกหน้า"
+          key="ogdesc"
+        />
 
         <meta
           name="apple-mobile-web-app-status-bar-style"
@@ -22,7 +31,7 @@ const Home: NextPage = () => {
         <link rel="manifest" href="/manifest.json" />
 
         <meta name="viewport" content="initial-scale=1, viewport-fit=cover" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.png" />
       </Head>
 
       <main className="min-h-screen bg-navy-blue-900 py-6 flex flex-col justify-center relative overflow-hidden">

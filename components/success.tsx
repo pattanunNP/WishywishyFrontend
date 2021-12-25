@@ -1,14 +1,21 @@
 import { Player } from "@lottiefiles/react-lottie-player";
-import animationData from "./lottie/jumping-gift-boxes.json";
+import animationData from "./lottie/success.json";
 import Head from "next/head";
 
 export default function Loading() {
   return (
     <>
       <Head>
-        <title>Loading ...</title>
+        <title>Success</title>
         <meta name="description" content="Givemeawish" />
-        <link rel="icon" href="/logo.png" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
+        <link rel="manifest" href="/manifest.json" />
+
+        <meta name="viewport" content="initial-scale=1, viewport-fit=cover" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="min-h-screen bg-navy-blue-800 py-6 flex flex-col justify-center relative overflow-hidden">
         <div className="container mx-auto">
@@ -21,7 +28,7 @@ export default function Loading() {
             ></Player>
           </div>
           <div className="flex flex-col items-center justify-center">
-            <h1 className="text-white font-Itim">กำลังโหลด&nbsp;...</h1>
+            <h1 className="text-white font-Itim">ดำเนินการสำเร็จ</h1>
           </div>
         </div>
       </div>

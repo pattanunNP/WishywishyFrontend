@@ -9,8 +9,10 @@ type UserContextProviderProps = {
 export interface UserContextConstruct {
   profile: userProps | undefined | null;
   setProfile: any;
-  idToken: idProps | undefined | null;
+  idToken: string | undefined | null;
   setIdToken: any;
+  accessToken: string | undefined | null;
+  setAccessToken: any;
 }
 
 export const UserContext = React.createContext({} as UserContextConstruct);
@@ -19,7 +21,8 @@ export const UserContext = React.createContext({} as UserContextConstruct);
 
 export const UserContextProvider = ({ children }: UserContextProviderProps) => {
   const [profile, setProfile] = useState<userProps>();
-  const [idToken, setIdToken] = useState<idProps | null>();
+  const [idToken, setIdToken] = useState<string | null | undefined>();
+  const [accessToken, setAccessToken] = useState<string | null | undefined>();
 
   async function getLineProfile() {
     const liff = (await import("@line/liff")).default;
@@ -63,7 +66,24 @@ export const UserContextProvider = ({ children }: UserContextProviderProps) => {
       .then(() => {
         const IDToken = liff.getIDToken();
 
-        setIdToken({ idToken: IDToken });
+        setIdToken(IDToken);
+      })
+      .catch((error: any) => {
+        console.log(error);
+      });
+  }
+
+  async function getAccessToken() {
+    const liff = (await import("@line/liff")).default;
+    await liff
+      .init({
+        liffId: String(liffId),
+        withLoginOnExternalBrowser: true,
+      })
+      .then(() => {
+        const AccessToken = liff.getAccessToken;
+
+        setAccessToken(AccessToken);
       })
       .catch((error: any) => {
         console.log(error);
@@ -73,10 +93,20 @@ export const UserContextProvider = ({ children }: UserContextProviderProps) => {
   useEffect(() => {
     getLineProfile();
     getIdToken();
+    getAccessToken();
   }, []);
 
   return (
-    <UserContext.Provider value={{ profile, setProfile, idToken, setIdToken }}>
+    <UserContext.Provider
+      value={{
+        profile,
+        setProfile,
+        idToken,
+        setIdToken,
+        accessToken,
+        setAccessToken,
+      }}
+    >
       {children}
     </UserContext.Provider>
   );

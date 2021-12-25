@@ -40,6 +40,7 @@ module.exports = {
           700: '#9B1B1F'
         },
         'christmas-green': {
+          400: "#64e291",
           500: '#165B33',
           600: '#0F4A2E',
           700: '#0F4A2E'

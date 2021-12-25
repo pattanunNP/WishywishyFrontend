@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import { useState, useContext } from "react";
 import Footer from "../../components/footer";
 import BackButton from "../../components/back";
@@ -20,6 +21,28 @@ const Create: NextPage = () => {
 
   return (
     <div>
+      <Head>
+        <title>Create Wish</title>
+        <meta property="og:title" content="Wishy Wihshy" key="title" />
+        <meta name="description" content="Givemeawish" />
+
+        <meta property="og:image" content="/logo.png" key="ogimage" />
+        <meta property="og:site_name" content="wishy wishy" key="ogsitename" />
+        <meta
+          property="og:description"
+          content="ส่งพรปีใหม่ถึงคนแปลกหน้า"
+          key="ogdesc"
+        />
+
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
+        <link rel="manifest" href="/manifest.json" />
+
+        <meta name="viewport" content="initial-scale=1, viewport-fit=cover" />
+        <link rel="icon" href="/logo.png" />
+      </Head>
       <BackButton />
       <main className="min-h-screen bg-navy-blue-800 flex flex-col justify-center relative overflow-hidden">
         <div className="container mx-auto">
