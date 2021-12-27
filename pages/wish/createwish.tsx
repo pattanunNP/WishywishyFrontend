@@ -32,16 +32,18 @@ const CreateWish: NextPage = () => {
       },
     };
     // console.log(payload);
-    setLoading(true);
-    const res = await axios.post(endpoint, payload, config);
-    if (res.status === 201) {
-      setIsSuccess(true);
-      console.log("success");
-      setLoading(false);
-      setTimeout(() => {
-        setIsSuccess(false);
-      }, 3000);
-    }
+    setTimeout(async () => {
+      setLoading(true);
+      const res = await axios.post(endpoint, payload, config);
+      if (res.status === 201) {
+        setIsSuccess(true);
+        console.log("success");
+        setLoading(false);
+        setTimeout(() => {
+          setIsSuccess(false);
+        }, 3000);
+      }
+    }, 1000);
   }
   return (
     <div>
