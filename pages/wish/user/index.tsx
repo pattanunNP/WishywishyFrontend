@@ -6,10 +6,9 @@ import { useContext } from "react";
 import { UserContext } from "../../../contexts/UserContext";
 import BackButton from "../../../components/back";
 import Footer from "../../../components/footer";
-import Link from "next/link";
 import { parseCookies } from "../../../helpers";
 import axios from "axios";
-
+import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
 interface UserWishProps {
   data: [
     {
@@ -72,14 +71,22 @@ const Wish = ({ data }: UserWishProps) => {
             {data[0].userwish_info.map((wish, index) => (
               <div
                 key={index}
-                className="p-3 bg-white  border-b-4 border-r-4 border-black rounded-xl w-72 h-80"
+                className="p-3 bg-white  border-b-4 border-r-4 border-black rounded-xl w-72 h-full"
               >
                 <h1 className="text-black font-Kanit p-1">
                   ถึง&nbsp;{profile?.displayName}
                 </h1>
+                <div className="flex justify-start">
+                  <ImQuotesLeft />
+                </div>
+
                 <div className="flex flex-row justify-center items-center space-x-4 space-y-5">
                   <p className="font-Kanit p-2 text-gray-500">{wish.content}</p>
                 </div>
+                <div className="flex justify-end">
+                  <ImQuotesRight />
+                </div>
+
                 <p className="text-gray-800 font-Kanit  align-bottom">
                   จาก&nbsp;{wish.creator}
                 </p>

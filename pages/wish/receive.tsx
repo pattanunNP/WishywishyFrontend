@@ -10,6 +10,7 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import animationData from "../../components/lottie/snow-fall-2.json";
 import Loading from "../../components/loading";
 import Success from "../../components/success";
+import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
 interface RandomWishProps {
   data: {
     data: {
@@ -76,49 +77,67 @@ const ReceiveWish = ({ data }: RandomWishProps) => {
         <meta name="viewport" content="initial-scale=1, viewport-fit=cover" />
         <link rel="icon" href="/logo.png" />
       </Head>
-      {loading && <Loading />}
-      {isSuccess && <Success />}
-      <BackButton />
-      <main className="min-h-screen bg-navy-blue-800 bg-santa  bg-no-repeat flex flex-col justify-center relative overflow-hidden">
-        <Player
-          autoplay
-          loop
-          renderer="svg"
-          speed={0.5}
-          src={animationData}
-          className="z-20 absolute top-0 left-0  w-screen h-screen
-          object-fill"
-        />
+      {!loading ? (
+        !isSuccess ? (
+          <>
+            <BackButton />
+            <main className="min-h-screen bg-navy-blue-800 bg-santa  bg-no-repeat flex flex-col justify-center relative overflow-hidden">
+              <Player
+                autoplay
+                loop
+                renderer="svg"
+                speed={0.5}
+                src={animationData}
+                className="z-20 absolute top-0 left-0  w-screen h-screen
+           object-fill"
+              />
 
-        <div className="z-30 container mx-auto">
-          <div className="mt-10  mb-5 flex flex-col items-center justify-center">
-            <h1 className="text-white justify-center item-center text-xl font-semibold font-Kanit">
-              คุณได้รับคำอวยพร&nbsp;จาก&nbsp;{data.data.creator}
-            </h1>
-          </div>
+              <div className="z-30 container mx-auto">
+                <div className="mt-10  mb-5 flex flex-col items-center justify-center ">
+                  <div className="bg-blue-500 w-full p-2 rounded-full text-center align-middle">
+                    <h1 className="text-white justify-center item-center text-lg font-semibold font-Kanit">
+                      คุณได้รับคำอวยพร&nbsp;จาก&nbsp;{data.data.creator}
+                    </h1>
+                  </div>
+                </div>
 
-          <div className="mt-5 flex flex-col items-start justify-center bg-white w-full h-full border-black border-r-8 border-b-8  p-4 rounded-xl ">
-            <h1 className="font-Kanit text-left font-semibold">
-              ถึง&nbsp;<span>{profile?.displayName}</span>
-            </h1>
-            <p className="p-2 w-full h-full  font-Kanit">{data.data.content}</p>
-            <h1 className="text-left font-Kanit">
-              จาก&nbsp;<span>{data.data.creator}</span>
-            </h1>
-          </div>
-          <div className="mt-10  mb-5 flex flex-col items-center justify-center">
-            <div
-              className="btn-primary2"
-              onClick={() => {
-                saveWish(data.data.wish_id, null);
-              }}
-            >
-              บันทึกเก็บไว้
-            </div>
-          </div>
-        </div>
-      </main>
-      <Footer />
+                <div className="mt-5 flex flex-col justify-center bg-white w-full h-full border-black border-r-8 border-b-8  p-4 rounded-xl ">
+                  <h1 className="font-Kanit text-left font-semibold">
+                    ถึง&nbsp;<span>{profile?.displayName}</span>
+                  </h1>
+                  <div className="flex   justify-start">
+                    <ImQuotesLeft />
+                  </div>
+                  <p className="p-2 w-full h-full  font-Kanit">
+                    {data.data.content}
+                  </p>
+                  <div className="flex  justify-end">
+                    <ImQuotesRight />
+                  </div>
+                  <h1 className="text-left font-Kanit">
+                    จาก&nbsp;<span>{data.data.creator}</span>
+                  </h1>
+                </div>
+                <div className="mt-10  mb-5 flex flex-col items-center justify-center">
+                  <div
+                    className="btn-primary2"
+                    onClick={() => {
+                      saveWish(data.data.wish_id, null);
+                    }}
+                  >
+                    บันทึกเก็บไว้
+                  </div>
+                </div>
+              </div>
+            </main>
+            <Footer />
+          </>
+        ) : (
+          <Success />
+        )
+      ) : (
+        <Loading />
+      )}
     </div>
   );
 };

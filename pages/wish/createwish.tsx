@@ -10,6 +10,7 @@ import Loading from "../../components/loading";
 import Success from "../../components/success";
 import { Player } from "@lottiefiles/react-lottie-player";
 import animationData from "../../components/lottie/snow-fall-2.json";
+import FadeIn from "react-fade-in";
 
 const CreateWish: NextPage = () => {
   const [hidename, setHidename] = useState(false);
@@ -70,72 +71,83 @@ const CreateWish: NextPage = () => {
         <link rel="icon" href="/logo.png" />
       </Head>
 
-      {loading && <Loading />}
-      {isSuccess && <Success />}
-      <BackButton />
-      <main className="min-h-screen bg-navy-blue-800 bg-santa  bg-no-repeat flex flex-col justify-center relative overflow-hidden">
-        <Player
-          autoplay
-          loop
-          renderer="svg"
-          speed={0.5}
-          src={animationData}
-          className="z-20 absolute top-0 left-0  w-screen h-screen
+      {!loading ? (
+        !isSuccess ? (
+          <>
+            {" "}
+            <BackButton />
+            <main className="min-h-screen bg-navy-blue-800 bg-santa  bg-no-repeat flex flex-col justify-center relative overflow-hidden">
+              <Player
+                autoplay
+                loop
+                renderer="svg"
+                speed={0.5}
+                src={animationData}
+                className="z-20 absolute top-0 left-0  w-screen h-screen
           object-cover"
-        />
-        <div className="z-20 container mx-auto">
-          <div className="flex flex-col items-center justify-center">
-            <h1 className="font-Kanit text-white text-2xl ">
-              ส่งคำอวยพร ถึง คนแปลกหน้า
-            </h1>
-          </div>
+              />
+              <div className="z-20 container mx-auto">
+                <div className="mt-10  mb-5 flex flex-col items-center justify-center ">
+                  <div className="bg-blue-500 w-full p-2 rounded-full text-center align-middle">
+                    <h1 className="text-white justify-center item-center text-xl font-semibold font-Kanit">
+                      ส่งคำอวยพรปีใหม่ ให้กำลังใจกัน
+                    </h1>
+                  </div>
+                </div>
 
-          <div className="mt-5 flex flex-col items-start justify-center bg-white w-full h-full border-black border-r-8 border-b-8  p-4 rounded-xl">
-            <h1 className="font-Kanit text-left font-semibold">
-              ถึง <span>คนแปลกหน้า</span>
-            </h1>
-            <textarea
-              onChange={(e) => setWish(e.target.value)}
-              className="p-2 w-full h-full resize-y rounded-lg font-Kanit"
-              placeholder="พิมพ์คำอวยพรที่นี่"
-            />
+                <div className="mt-5 flex flex-col items-start justify-center bg-white w-full h-full border-black border-r-8 border-b-8  p-4 rounded-xl">
+                  <h1 className="font-Kanit text-left font-semibold">
+                    ถึง <span>คนแปลกหน้า</span>
+                  </h1>
+                  <textarea
+                    onChange={(e) => setWish(e.target.value)}
+                    className="p-2 w-full h-full resize-y rounded-lg font-Kanit"
+                    placeholder="พิมพ์คำอวยพรที่นี่"
+                  />
 
-            <div className="mt-10 flex flex-col ">
-              <label className="text-xl">
-                <input
-                  onChange={() => setHidename(!hidename)}
-                  type="checkbox"
-                  className="w-4 h-4 accent-pink-500"
-                  checked={hidename}
-                />
-                <span className="mx-2 font-Kanit">ซ่อนชื่อของคุณ</span>
-              </label>
-            </div>
-            <span className="text-sm font-Kanit text-gray-400">
-              *
-              การเลือกซ่อนชื่อหมายถึงผู้ที่ได้รับคำอวยพรจะไม่สามารถรู้ได้ว่าท่านเป็นใคร
-            </span>
-            <div className="mt-10  font-Kanit">
-              จาก&nbsp;
-              <span>
-                {hidename ? (
-                  <div>คนแปลกหน้าคนหนึ่ง</div>
-                ) : (
-                  <div>{profile?.displayName}</div>
-                )}
-              </span>
-            </div>
-          </div>
+                  <div className="mt-10 flex flex-col ">
+                    <label className="text-xl">
+                      <input
+                        onChange={() => setHidename(!hidename)}
+                        type="checkbox"
+                        className="w-4 h-4 accent-pink-500"
+                        checked={hidename}
+                      />
+                      <span className="mx-2 font-Kanit">ซ่อนชื่อของคุณ</span>
+                    </label>
+                  </div>
+                  <span className="text-sm font-Kanit text-gray-400">
+                    *
+                    การเลือกซ่อนชื่อหมายถึงผู้ที่ได้รับคำอวยพรจะไม่สามารถรู้ได้ว่าท่านเป็นใคร
+                  </span>
+                  <div className="mt-10  font-Kanit">
+                    จาก&nbsp;
+                    <span>
+                      {hidename ? (
+                        <div>คนแปลกหน้าคนหนึ่ง</div>
+                      ) : (
+                        <div>{profile?.displayName}</div>
+                      )}
+                    </span>
+                  </div>
+                </div>
 
-          <div className="mt-10 mb-5 flex flex-col items-center justify-center">
-            <div className="btn-primary1" onClick={() => sendWish()}>
-              {" "}
-              ส่งคำอวยพร
-            </div>
-          </div>
-        </div>
-      </main>
-      <Footer />
+                <div className="mt-10 mb-5 flex flex-col items-center justify-center">
+                  <div className="btn-primary1" onClick={() => sendWish()}>
+                    {" "}
+                    ส่งคำอวยพร
+                  </div>
+                </div>
+              </div>
+            </main>
+            <Footer />
+          </>
+        ) : (
+          <Success />
+        )
+      ) : (
+        <Loading />
+      )}
     </div>
   );
 };

@@ -2,6 +2,7 @@ import Head from "next/head";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
+import FadeIn from "react-fade-in/lib/FadeIn";
 
 export default function Modal() {
   const { setShow } = useContext(UserContext);
@@ -35,35 +36,27 @@ export default function Modal() {
               วิธีการเล่น
             </h1>
           </div>
-          <div className="mt-5 px-5 flex flex-col items-start justify-start">
-            <div className="flex flex-row space-x-4">
-              <div className="align-middle text-md text-white font-Kanit font-medium bg-red-600 p-1 w-8 h-8 text-center inset-0 top-0 justify-items-center rounded-full">
-                <p>1</p>
-              </div>
-              <p className="font-Kanit text-md">
-                เขียนคำอวยพรปีใหม่ส่งให้คนแปลกหน้า<br></br>ส่งต่อความรู้สึกดี ๆ
-                ร่วมกัน
+
+          <div className="mt-10 mx-5 flex flex-col items-start justify-start">
+            <div className="flex flex-row space-x-8">
+              <p className="font-Kanit text-md text-slate-600">
+                1.&nbsp;&nbsp;&nbsp;เขียนคำอวยพรปีใหม่ ให้กำลังใจกัน
               </p>
             </div>
           </div>
-          <div className="mt-10 px-5 flex flex-col items-start justify-start">
-            <div className="flex flex-row space-x-4">
-              <div className="align-middle text-md text-white font-Kanit font-medium bg-red-600 p-1 w-8 h-8 text-center inset-0 top-0 justify-items-center rounded-full">
-                <p>2</p>
-              </div>
-              <p className="font-Kanit text-md">
-                รับคำอวยพรปีใหม่ด้วยการสุ่มจากในระบบ<br></br>
+
+          <div className="mt-10 mx-5 flex flex-col items-start justify-start">
+            <div className="flex flex-row space-x-8">
+              <p className="font-Kanit text-md text-slate-600">
+                2.&nbsp;&nbsp;&nbsp;รับคำอวยพรปีใหม่ด้วยการสุ่มจากในระบบ
                 บันทึกเก็บไว้ถ้าต้องการ
               </p>
             </div>
           </div>
-          <div className="mt-10 px-5 flex flex-col items-start justify-start">
-            <div className="flex flex-row space-x-4">
-              <div className="align-middle text-md text-white font-Kanit font-medium bg-red-600 p-1 w-8 h-8 text-center inset-0 top-0 justify-items-center rounded-full">
-                <p>3</p>
-              </div>
-              <p className="font-Kanit text-md">
-                แชร์ออกไปให้เพื่อนของคุณได้สนุกร่วมกัน
+          <div className="mt-10 mx-5 flex flex-col items-start justify-start">
+            <div className="flex flex-row space-x-8">
+              <p className="font-Kanit text-md text-slate-600">
+                3.&nbsp;&nbsp;&nbsp;แชร์ออกไปให้เพื่อนของคุณได้สนุกร่วมกัน
               </p>
             </div>
           </div>
