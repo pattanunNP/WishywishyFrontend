@@ -2,7 +2,7 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import animationData from "./lottie/success.json";
 import Head from "next/head";
 
-export default function Loading() {
+export default function Success() {
   return (
     <>
       <Head>

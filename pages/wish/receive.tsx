@@ -77,7 +77,7 @@ const ReceiveWish = ({ data }: RandomWishProps) => {
       {loading && <Loading />}
       {isSuccess && <Success />}
       <BackButton />
-      <main className="min-h-screen bg-navy-blue-800 flex flex-col justify-center relative overflow-hidden">
+      <main className="min-h-screen bg-navy-blue-800 bg-santa flex flex-col justify-center relative overflow-hidden">
         <Player
           autoplay
           loop
@@ -95,9 +95,8 @@ const ReceiveWish = ({ data }: RandomWishProps) => {
             </h1>
           </div>
 
-          <div className="flex flex-col items-center justify-center w-64"></div>
           <div className="mt-5 flex flex-col items-start justify-center bg-white w-full h-full border-black border-r-8 border-b-8  p-4 rounded-xl ">
-            <h1 className="font-Itim text-left font-semibold">
+            <h1 className="font-Kanit text-left font-semibold">
               ถึง&nbsp;<span>{profile?.displayName}</span>
             </h1>
             <p className="p-2 w-full h-full  font-Kanit">{data.data.content}</p>

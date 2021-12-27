@@ -57,7 +57,7 @@ const Wish = ({ data }: UserWishProps) => {
       </Head>
       <BackButton />
 
-      <main className="min-h-screen bg-navy-blue-800 flex flex-col justify-center relative">
+      <main className="min-h-screen bg-navy-blue-800  bg-santa flex flex-col justify-center relative">
         <Player
           autoplay
           loop
@@ -72,15 +72,15 @@ const Wish = ({ data }: UserWishProps) => {
             {data[0].userwish_info.map((wish, index) => (
               <div
                 key={index}
-                className="bg-white p-2 border-b-4 border-r-4 border-black rounded-xl w-72 min-h-64"
+                className="p-3 bg-white  border-b-4 border-r-4 border-black rounded-xl w-72 h-80"
               >
-                <h1 className="text-black font-Kanit">
-                  {profile?.displayName}
+                <h1 className="text-black font-Kanit p-1">
+                  ถึง&nbsp;{profile?.displayName}
                 </h1>
-                <p className="font-Kanit p-2">
-                  &quot;&nbsp;&nbsp;{wish.content}&nbsp;&nbsp;&quot;
-                </p>
-                <p className="text-gray-600 font-Kanit">
+                <div className="flex flex-row justify-center items-center space-x-4 space-y-5">
+                  <p className="font-Kanit p-2 text-gray-500">{wish.content}</p>
+                </div>
+                <p className="text-gray-800 font-Kanit  align-bottom">
                   จาก&nbsp;{wish.creator}
                 </p>
               </div>

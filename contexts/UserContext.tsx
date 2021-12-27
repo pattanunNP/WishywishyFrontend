@@ -2,8 +2,6 @@ import React, { useContext, createContext, useState, useEffect } from "react";
 import { userProps, idProps } from "../models/user";
 import { useCookies } from "react-cookie";
 
-const liffId = process.env.NEXT_PUBLIC_LIFF_ID;
-
 type UserContextProviderProps = {
   children: React.ReactNode;
 };
@@ -14,6 +12,8 @@ export interface UserContextConstruct {
   setIdToken: any;
   accessToken: string | undefined | null;
   setAccessToken: any;
+  show: boolean;
+  setShow: any;
 }
 
 export const UserContext = React.createContext({} as UserContextConstruct);
@@ -25,6 +25,13 @@ export const UserContextProvider = ({ children }: UserContextProviderProps) => {
   const [idToken, setIdToken] = useState<string | null | undefined>();
   const [accessToken, setAccessToken] = useState<string | null | undefined>();
   const [cookies, setCookie] = useCookies(["accessToken"]);
+  const [show, setShow] = useState<boolean>(false);
+
+  if (process.env.NODE_ENV !== "production") {
+    var liffId = process.env.NEXT_PUBLIC_LIFF_ID_DEV;
+  } else {
+    var liffId = process.env.NEXT_PUBLIC_LIFF_ID_PROD;
+  }
 
   async function getLineProfile() {
     const liff = (await import("@line/liff")).default;
@@ -112,6 +119,8 @@ export const UserContextProvider = ({ children }: UserContextProviderProps) => {
         setIdToken,
         accessToken,
         setAccessToken,
+        show,
+        setShow,
       }}
     >
       {children}
