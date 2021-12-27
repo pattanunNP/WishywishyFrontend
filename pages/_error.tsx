@@ -8,7 +8,7 @@ export default function Loading() {
   return (
     <>
       <Head>
-        <title>404 NotFound</title>
+        <title>500 Internal Server Erro</title>
         <meta name="description" content="Givemeawish" />
         <link rel="icon" href="/logo.png" />
       </Head>
@@ -20,7 +20,8 @@ export default function Loading() {
           </div>
           <div className="mt-10 flex flex-col items-center justify-center">
             <h1 className="text-white text-xl font-Kanit">
-              เกิดข้อผิดพลาดที่ Server เราทำกำลังดำเนินการแก้ไข
+              เกิดข้อผิดพลาดที่ Server<br></br>
+              เรากำลังดำเนินการแก้ไข
             </h1>
           </div>
         </div>
