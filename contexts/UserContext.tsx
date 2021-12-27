@@ -1,5 +1,6 @@
 import React, { useContext, createContext, useState, useEffect } from "react";
 import { userProps, idProps } from "../models/user";
+import { useCookies } from "react-cookie";
 
 const liffId = process.env.NEXT_PUBLIC_LIFF_ID;
 
@@ -23,6 +24,7 @@ export const UserContextProvider = ({ children }: UserContextProviderProps) => {
   const [profile, setProfile] = useState<userProps>();
   const [idToken, setIdToken] = useState<string | null | undefined>();
   const [accessToken, setAccessToken] = useState<string | null | undefined>();
+  const [cookies, setCookie] = useCookies(["accessToken"]);
 
   async function getLineProfile() {
     const liff = (await import("@line/liff")).default;
@@ -95,6 +97,11 @@ export const UserContextProvider = ({ children }: UserContextProviderProps) => {
     getIdToken();
     getAccessToken();
   }, []);
+  setCookie("accessToken", accessToken, {
+    path: "/",
+    maxAge: 3600 * 12, // Expires after 12hr
+    sameSite: true,
+  });
 
   return (
     <UserContext.Provider

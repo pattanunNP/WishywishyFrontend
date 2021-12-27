@@ -5,10 +5,11 @@ import Link from "next/link";
 import { useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
 import Footer from "../components/footer";
+import { Player } from "@lottiefiles/react-lottie-player";
+import animationData from "../components/lottie/snow-fall-2.json";
 
 const Home: NextPage = () => {
-  const { profile, accessToken } = useContext(UserContext);
-  // console.log(accessToken);
+  const { profile } = useContext(UserContext);
 
   return (
     <div>
@@ -35,7 +36,15 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="min-h-screen bg-navy-blue-900 py-6 flex flex-col justify-center relative overflow-hidden">
-        <div className="bg-santa bg-fix bg-no-repeat">
+        <Player
+          autoplay
+          loop
+          speed={0.5}
+          src={animationData}
+          renderer="svg"
+          className="z-20 aspect-auto absolute top-0 left-0 w-screen h-screen"
+        />
+        <div className="z-30 bg-santa bg-fix bg-no-repeat">
           <div className="container mx-auto">
             <div className="p-2 flex flex-col items-center justify-center ">
               <div className="rounded-full ring-white ring-4 w-24 h-24">
@@ -52,7 +61,7 @@ const Home: NextPage = () => {
               </div>
             </div>
             <div className="mt-10 flex justify-center space-y-5">
-              <h1 className="bg-white opacity-80 text-center px-3 py-2 md:w-96 sm:w-64 xs:w-48 rounded-lg text-black text-xl font-bold font-Itim">
+              <h1 className="bg-white opacity-80 text-center px-3 py-2 md:w-96 sm:w-64 xs:w-48 rounded-lg text-black text-xl  font-Kanit">
                 สวัสดี <br></br>
                 {profile?.displayName}
               </h1>
@@ -66,7 +75,7 @@ const Home: NextPage = () => {
                 <Link href="/wish/receive" passHref>
                   <div className="btn-primary2">รับคำอวยพร</div>
                 </Link>
-                <Link href="/wish" passHref>
+                <Link href="/wish/user/" passHref>
                   <div className="btn-primary3">คำอวยพรที่ได้รับ</div>
                 </Link>
               </div>
