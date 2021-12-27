@@ -67,13 +67,13 @@ const Wish = ({ data }: UserWishProps) => {
           object-fill"
         />
         <div className="z-40 container mx-auto">
-          <div className="m-2 mt-5 items-start justify-center w-full h-full overflow-hidden flex md:flex-row  md:space-x-5 md:space-y-0 sm:flex-col sm:space-y-2 xs:flex-col xs:space-y-4">
+          <div className="mx-2 mt-5 items-center justify-center w-full h-full overflow-hidden flex landscape:flex-col landscape:space-x-0 landscape:space-y-3 portrait:flex-col portrait:space-x-0 portrait:space-y-3">
             {data[0].userwish_info.map((wish, index) => (
               <div
                 key={index}
-                className="p-3 bg-white  border-b-4 border-r-4 border-black rounded-xl w-72 h-full"
+                className="p-3 bg-white  border-b-4 border-r-4 border-black rounded-xl portrait:w-[300px] landscape:w-[450px] landscape:h-full portrait:h-full"
               >
-                <h1 className="text-black font-Kanit p-1">
+                <h1 className="text-black font-Kanit p-1 md:text-lg">
                   ถึง&nbsp;{profile?.displayName}
                 </h1>
                 <div className="flex justify-start">
@@ -81,7 +81,9 @@ const Wish = ({ data }: UserWishProps) => {
                 </div>
 
                 <div className="flex flex-row justify-center items-center space-x-4 space-y-5">
-                  <p className="font-Kanit p-2 text-gray-500">{wish.content}</p>
+                  <p className="font-Kanit p-2 text-gray-500 xs:text-sm sm:text-md md:text-lg">
+                    {wish.content}
+                  </p>
                 </div>
                 <div className="flex justify-end">
                   <ImQuotesRight />
