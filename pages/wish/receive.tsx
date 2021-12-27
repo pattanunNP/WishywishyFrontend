@@ -77,7 +77,7 @@ const ReceiveWish = ({ data }: RandomWishProps) => {
       {loading && <Loading />}
       {isSuccess && <Success />}
       <BackButton />
-      <main className="min-h-screen bg-navy-blue-800 bg-santa flex flex-col justify-center relative overflow-hidden">
+      <main className="min-h-screen bg-navy-blue-800 bg-santa  bg-no-repeat flex flex-col justify-center relative overflow-hidden">
         <Player
           autoplay
           loop
