@@ -21,7 +21,7 @@ export default function Modal() {
       </Head>
 
       <div className="flex flex-col items-center focus:outline-none ">
-        <div className="z-40 absolute bg-white xs:w-[320px] xs:h-[420px] md:h-[360px] md:w-[420px]  rounded-xl shadow-lg shadow-gray-800 transition ease-in-out delay-350 opacity-100">
+        <div className="z-40 absolute bg-white xs:w-[320px] xs:h-[420px] md:h-[420px] md:w-[420px]  rounded-xl shadow-lg shadow-gray-800 transition ease-in-out delay-350 opacity-100">
           <div className="m-3 flex flex-col items-end justify-end">
             <AiFillCloseCircle
               className="text-3xl text-red-500"
