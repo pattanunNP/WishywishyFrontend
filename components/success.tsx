@@ -2,7 +2,7 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import animationData from "./lottie/success.json";
 import Head from "next/head";
 
-export default function Loading() {
+export default function Success() {
   return (
     <>
       <Head>
@@ -28,7 +28,7 @@ export default function Loading() {
             ></Player>
           </div>
           <div className="flex flex-col items-center justify-center">
-            <h1 className="text-white font-Itim">ดำเนินการสำเร็จ</h1>
+            <h1 className="text-white font-Kanit">ดำเนินการสำเร็จ</h1>
           </div>
         </div>
       </div>

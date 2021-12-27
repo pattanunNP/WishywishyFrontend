@@ -1,30 +1,31 @@
 import { Player } from "@lottiefiles/react-lottie-player";
-import animationData from "./lottie/jumping-gift-boxes.json";
+import animationData from "../components/lottie/not-found-page.json";
 import Head from "next/head";
+import BackButton from "../components/back";
+import Footer from "../components/footer";
 
 export default function Loading() {
   return (
     <>
       <Head>
-        <title>Loading ...</title>
+        <title>404 NotFound</title>
         <meta name="description" content="Givemeawish" />
         <link rel="icon" href="/logo.png" />
       </Head>
+      <BackButton />
       <div className="min-h-screen bg-navy-blue-800 py-6 flex flex-col justify-center relative overflow-hidden">
         <div className="container mx-auto">
           <div className="flex flex-col items-center justify-center">
-            <Player
-              autoplay
-              loop
-              src={animationData}
-              style={{ height: "300px", width: "300px" }}
-            ></Player>
+            <Player autoplay loop src={animationData} className="w-96" />
           </div>
-          <div className="flex flex-col items-center justify-center">
-            <h1 className="text-white font-Kanit">กำลังโหลด&nbsp;...</h1>
+          <div className="mt-10 flex flex-col items-center justify-center">
+            <h1 className="text-white text-xl font-Kanit">
+              ไม่พบหน้าที่คุณต้องการ
+            </h1>
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
