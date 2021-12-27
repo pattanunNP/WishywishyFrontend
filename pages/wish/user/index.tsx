@@ -72,12 +72,14 @@ const Wish = ({ data }: UserWishProps) => {
             {data[0].userwish_info.map((wish, index) => (
               <div
                 key={index}
-                className="bg-white p-2 border-b-4 border-r-4 border-black rounded-xl w-64 min-h-64"
+                className="bg-white p-2 border-b-4 border-r-4 border-black rounded-xl w-72 min-h-64"
               >
                 <h1 className="text-black font-Kanit">
                   {profile?.displayName}
                 </h1>
-                <p className="font-Kanit p-2">&quot;{wish.content}&quot;</p>
+                <p className="font-Kanit p-2">
+                  &quot;&nbsp;&nbsp;{wish.content}&nbsp;&nbsp;&quot;
+                </p>
                 <p className="text-gray-600 font-Kanit">
                   จาก&nbsp;{wish.creator}
                 </p>
