@@ -115,7 +115,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
 
   const accessToken = cookie.accessToken;
 
-  // console.log(accessToken);
+  console.log(accessToken);
 
   const headers = {
     "Content-Type": "application/json",

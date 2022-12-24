@@ -39,9 +39,11 @@ const ReceiveWish = ({ data }: RandomWishProps) => {
         Authorization: `Bearer ${accessToken}`,
       },
     };
+    console.log(config);
     setTimeout(async () => {
       setLoading(true);
       const res = await axios.post(endpoint, { wish_id }, config);
+      console.log(res);
       if (res.status === 200) {
         setIsSuccess(true);
         // console.log("success");

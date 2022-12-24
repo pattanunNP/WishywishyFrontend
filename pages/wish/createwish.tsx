@@ -10,7 +10,6 @@ import Loading from "../../components/loading";
 import Success from "../../components/success";
 import { Player } from "@lottiefiles/react-lottie-player";
 import animationData from "../../components/lottie/snow-fall-2.json";
-import FadeIn from "react-fade-in";
 
 const CreateWish: NextPage = () => {
   const [hidename, setHidename] = useState(false);

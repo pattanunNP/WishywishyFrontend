@@ -7,7 +7,7 @@ export default function Footer() {
         <Image
           className="sm:block"
           alt="logo"
-          src="/standupcode.jpg"
+          src="/StandUpCode.png"
           width="25"
           height="25"
         />
