@@ -6,10 +6,10 @@ import { useContext } from "react";
 import { UserContext } from "../../../contexts/UserContext";
 import BackButton from "../../../components/back";
 import Footer from "../../../components/footer";
-import Link from "next/link";
 import { parseCookies } from "../../../helpers";
+import Empty from "../../../components/empty";
 import axios from "axios";
-
+import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
 interface UserWishProps {
   data: [
     {
@@ -30,7 +30,7 @@ interface UserWishProps {
 
 const Wish = ({ data }: UserWishProps) => {
   const { profile } = useContext(UserContext);
-
+  console.log(data);
   return (
     <div>
       <Head>
@@ -56,38 +56,51 @@ const Wish = ({ data }: UserWishProps) => {
         <link rel="icon" href="/logo.png" />
       </Head>
       <BackButton />
+      {data != null ? (
+        <main className="min-h-screen bg-navy-blue-800  bg-santa  bg-no-repeat flex flex-col justify-center relative">
+          <Player
+            autoplay
+            loop
+            renderer="svg"
+            speed={0.5}
+            src={animationData}
+            className="z-20 absolute top-0 left-0  w-screen h-screen
+              object-fill"
+          />
 
-      <main className="min-h-screen bg-navy-blue-800  bg-santa  bg-no-repeat flex flex-col justify-center relative">
-        <Player
-          autoplay
-          loop
-          renderer="svg"
-          speed={0.5}
-          src={animationData}
-          className="z-20 absolute top-0 left-0  w-screen h-screen
-          object-fill"
-        />
-        <div className="z-40 container mx-auto">
-          <div className="m-2 mt-5 items-start justify-center w-full h-full overflow-hidden flex md:flex-row  md:space-x-5 md:space-y-0 sm:flex-col sm:space-y-2 xs:flex-col xs:space-y-4">
-            {data[0].userwish_info.map((wish, index) => (
+          <div className="z-40 container mx-auto">
+            <div className="mx-2 mt-5 items-center justify-center w-full h-full overflow-hidden flex landscape:flex-col landscape:space-x-0 landscape:space-y-3 portrait:flex-col portrait:space-x-0 portrait:space-y-3"></div>
+            {data[0]?.userwish_info.map((wish, index) => (
               <div
                 key={index}
-                className="p-3 bg-white  border-b-4 border-r-4 border-black rounded-xl w-72 h-80"
+                className="p-3 bg-white  border-b-4 border-r-4 border-black rounded-xl portrait:w-[300px] landscape:w-[450px] landscape:h-full portrait:h-full"
               >
-                <h1 className="text-black font-Kanit p-1">
+                <h1 className="text-black font-Kanit p-1 md:text-lg">
                   ถึง&nbsp;{profile?.displayName}
                 </h1>
-                <div className="flex flex-row justify-center items-center space-x-4 space-y-5">
-                  <p className="font-Kanit p-2 text-gray-500">{wish.content}</p>
+                <div className="flex justify-start">
+                  <ImQuotesLeft />
                 </div>
+
+                <div className="flex flex-row justify-center items-center space-x-4 space-y-5">
+                  <p className="font-Kanit p-2 text-gray-500 xs:text-sm sm:text-md md:text-lg">
+                    {wish.content}
+                  </p>
+                </div>
+                <div className="flex justify-end">
+                  <ImQuotesRight />
+                </div>
+
                 <p className="text-gray-800 font-Kanit  align-bottom">
-                  จาก&nbsp;{wish.creator}
+                  From&nbsp;{wish.creator}
                 </p>
               </div>
             ))}
           </div>
-        </div>
-      </main>
+        </main>
+      ) : (
+        <Empty />
+      )}
 
       <Footer />
     </div>
@@ -102,7 +115,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
 
   const accessToken = cookie.accessToken;
 
-  // console.log(accessToken);
+  console.log(accessToken);
 
   const headers = {
     "Content-Type": "application/json",
@@ -110,8 +123,6 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   };
 
   const res = await axios.get(endpoint, { headers });
-
-  console.log(res.data.data);
 
   return {
     props: { data: res.data.data },
