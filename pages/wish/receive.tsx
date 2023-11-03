@@ -151,7 +151,7 @@ const ReceiveWish = () => {
 									<div
 										className="btn-primary2"
 										onClick={() => {
-											saveWish(data.wish_id, null);
+											saveWish(data.wish_id);
 										}}
 									>
 										Save Wish
