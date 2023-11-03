@@ -5,63 +5,62 @@ import { UserContext } from "../contexts/UserContext";
 import FadeIn from "react-fade-in/lib/FadeIn";
 
 export default function Modal() {
-  const { setShow } = useContext(UserContext);
-  return (
-    <>
-      <Head>
-        <title>Success</title>
-        <meta name="description" content="Givemeawish" />
-        <meta
-          name="apple-mobile-web-app-status-bar-style"
-          content="black-translucent"
-        />
-        <link rel="manifest" href="/manifest.json" />
+	const { setShow } = useContext(UserContext);
+	return (
+		<>
+			<Head>
+				<title>Success</title>
+				<meta name="description" content="Givemeawish" />
+				<meta
+					name="apple-mobile-web-app-status-bar-style"
+					content="black-translucent"
+				/>
+				<link rel="manifest" href="/manifest.json" />
 
-        <meta name="viewport" content="initial-scale=1, viewport-fit=cover" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+				<meta name="viewport" content="initial-scale=1, viewport-fit=cover" />
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
 
-      <div className="flex flex-col items-center focus:outline-none ">
-        <div className="z-40 absolute bg-white xs:w-[320px] xs:h-[420px] md:h-[420px] md:w-[420px]  rounded-xl shadow-lg shadow-gray-800 transition ease-in-out delay-350 opacity-100">
-          <div className="m-3 flex flex-col items-end justify-end">
-            <AiFillCloseCircle
-              className="text-3xl text-red-500"
-              onClick={() => {
-                setShow(false);
-              }}
-            />
-          </div>
-          <div className="mt-2 flex flex-row items-center justify-center">
-            <h1 className="text-md text-white font-Kanit font-semibold bg-red-500 px-4 py-2 rounded-full">
-              วิธีการเล่น
-            </h1>
-          </div>
+			<div className="flex flex-col items-center focus:outline-none ">
+				<div className="z-40 absolute bg-white xs:w-[320px] xs:h-[420px] md:h-[420px] md:w-[420px]  rounded-xl shadow-lg shadow-gray-800 transition ease-in-out delay-350 opacity-100">
+					<div className="m-3 flex flex-col items-end justify-end">
+						<AiFillCloseCircle
+							className="text-3xl text-red-500"
+							onClick={() => {
+								setShow(false);
+							}}
+						/>
+					</div>
+					<div className="mt-2 flex flex-row items-center justify-center">
+						<h1 className="text-md text-white font-Kanit font-semibold bg-red-500 px-4 py-2 rounded-full">
+							How to Make a Wish
+						</h1>
+					</div>
 
-          <div className="mt-10 mx-5 flex flex-col items-start justify-start">
-            <div className="flex flex-row space-x-8">
-              <p className="font-Kanit text-md text-slate-600">
-                1.&nbsp;&nbsp;&nbsp;เขียนคำอวยพรปีใหม่ ให้กำลังใจกัน
-              </p>
-            </div>
-          </div>
+					<div className="mt-10 mx-5 flex flex-col items-start justify-start">
+						<div className="flex flex-row space-x-8">
+							<p className="font-Kanit text-md text-slate-600">
+								1.&nbsp;&nbsp;&nbsp;Send Wish to someone
+							</p>
+						</div>
+					</div>
 
-          <div className="mt-10 mx-5 flex flex-col items-start justify-start">
-            <div className="flex flex-row space-x-8">
-              <p className="font-Kanit text-md text-slate-600">
-                2.&nbsp;&nbsp;&nbsp;รับคำอวยพรปีใหม่ด้วยการสุ่มจากในระบบ
-                บันทึกเก็บไว้ถ้าต้องการ
-              </p>
-            </div>
-          </div>
-          <div className="mt-10 mx-5 flex flex-col items-start justify-start">
-            <div className="flex flex-row space-x-8">
-              <p className="font-Kanit text-md text-slate-600">
-                3.&nbsp;&nbsp;&nbsp;แชร์ออกไปให้เพื่อนของคุณได้สนุกร่วมกัน
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+					<div className="mt-10 mx-5 flex flex-col items-start justify-start">
+						<div className="flex flex-row space-x-8">
+							<p className="font-Kanit text-md text-slate-600">
+								2.&nbsp;&nbsp;&nbsp;Receive wish from the universe
+							</p>
+						</div>
+					</div>
+					<div className="mt-10 mx-5 flex flex-col items-start justify-start">
+						<div className="flex flex-row space-x-8">
+							<p className="font-Kanit text-md text-slate-600">
+								3.&nbsp;&nbsp;&nbsp;Share your wish wish with you friends
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</>
+	);
 }

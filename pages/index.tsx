@@ -23,7 +23,7 @@ const Home: NextPage = () => {
         <meta property="og:site_name" content="wishy wishy" key="ogsitename" />
         <meta
           property="og:description"
-          content="ส่งพรปีใหม่ถึงคนแปลกหน้า"
+          content="Send Wish to someone"
           key="ogdesc"
         />
 
@@ -68,7 +68,7 @@ const Home: NextPage = () => {
 
             <div className="mt-10 flex justify-center space-y-5">
               <h1 className="bg-white opacity-80 text-center px-3 py-2 md:w-96 sm:w-64 xs:w-48 rounded-lg text-black text-xl  font-Kanit">
-                สวัสดี <br></br>
+                Hi <br></br>
                 {profile?.displayName}
               </h1>
             </div>
@@ -81,7 +81,7 @@ const Home: NextPage = () => {
               <div className="bg-blue-500 px-1 py-1 w-32 rounded-full flex flex-row space-x-4">
                 <FiHelpCircle className="mx-1 mt-1 items-center text-white align-middle" />
                 <h1 className="text-center text-white text-md font-Kanit align-middle">
-                  วิธีการเล่น
+                  How to make a wish
                 </h1>
               </div>
             </div>
@@ -89,13 +89,13 @@ const Home: NextPage = () => {
             <div className="flex justify-center">
               <div className="mt-10 flex flex-col justify-center">
                 <Link href="/wish/createwish" passHref>
-                  <div className="btn-primary1">เขียนคำอวยพร</div>
+                  <div className="btn-primary1">Send a wish</div>
                 </Link>
                 <Link href="/wish/receive" passHref>
-                  <div className="btn-primary2">รับคำอวยพร</div>
+                  <div className="btn-primary2">Receive Wish</div>
                 </Link>
                 <Link href="/wish/user/" passHref>
-                  <div className="btn-primary3">คำอวยพรที่ได้รับ</div>
+                  <div className="btn-primary3">My wishes</div>
                 </Link>
               </div>
             </div>

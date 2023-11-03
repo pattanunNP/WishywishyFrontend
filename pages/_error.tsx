@@ -8,7 +8,7 @@ export default function Loading() {
   return (
     <>
       <Head>
-        <title>500 Internal Server Erro</title>
+        <title>500 Internal Server Error</title>
         <meta name="description" content="Givemeawish" />
         <link rel="icon" href="/logo.png" />
       </Head>
@@ -20,8 +20,8 @@ export default function Loading() {
           </div>
           <div className="mt-10 flex flex-col items-center justify-center">
             <h1 className="text-white text-xl font-Kanit">
-              เกิดข้อผิดพลาดที่ Server<br></br>
-              เรากำลังดำเนินการแก้ไข
+              Server is pass away<br></br>
+              We are sorry for this inconvenience
             </h1>
           </div>
         </div>

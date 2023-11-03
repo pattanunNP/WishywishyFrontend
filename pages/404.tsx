@@ -20,7 +20,8 @@ export default function Loading() {
           </div>
           <div className="mt-10 flex flex-col items-center justify-center">
             <h1 className="text-white text-xl font-Kanit">
-              ไม่พบหน้าที่คุณต้องการ
+              404 Not Found<br></br>
+              We are sorry for this inconvenience
             </h1>
           </div>
         </div>
