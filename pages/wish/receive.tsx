@@ -50,7 +50,7 @@ const ReceiveWish = () => {
 			console.log(res);
 			if (res.status === 200) {
 				setIsSuccess(true);
-				// console.log("success");
+				console.log("success");
 				setLoading(false);
 				setTimeout(() => {
 					setIsSuccess(false);

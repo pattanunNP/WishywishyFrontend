@@ -87,20 +87,20 @@ const CreateWish: NextPage = () => {
 							/>
 							<div className="z-20 container mx-auto">
 								<div className="mt-10  mb-5 flex flex-col items-center justify-center ">
-									<div className="bg-blue-500 w-full p-2 rounded-full text-center align-middle">
-										<h1 className="text-white justify-center item-center text-xl font-semibold font-Kanit">
-											Send Wish for sharing positive vibes
+									<div className="bg-white border-2 border-gray-300 w-full p-2 shadow-lg rounded-xl text-center align-middle">
+										<h1 className="text-black  justify-center item-center text-xl font-semibold font-Kanit">
+											Send a wish<br></br> for sharing wonderful vibes
 										</h1>
 									</div>
 								</div>
 
 								<div className="mt-5 flex flex-col items-start justify-center bg-white w-full h-full border-black border-r-8 border-b-8  p-4 rounded-xl">
 									<h1 className="font-Kanit text-left font-semibold">
-										Dear<span>guest</span>
+										Dear&nbsp;<span>guest</span>
 									</h1>
 									<textarea
 										onChange={(e) => setWish(e.target.value)}
-										className="p-2 w-full h-full resize-y rounded-lg font-Kanit"
+										className="my-2 p-2 w-full h-full resize-y rounded-lg font-Kanit"
 										placeholder="Write your wish here"
 									/>
 
@@ -109,7 +109,7 @@ const CreateWish: NextPage = () => {
 											<input
 												onChange={() => setHidename(!hidename)}
 												type="checkbox"
-												className="w-4 h-4 accent-pink-500"
+												className="w-4 h-4 accent-christmas-green-500"
 												checked={hidename}
 											/>
 											<span className="mx-2 font-Kanit">Hide you name</span>
@@ -120,7 +120,7 @@ const CreateWish: NextPage = () => {
 										are.
 									</span>
 									<div className="mt-10  font-Kanit">
-										จาก&nbsp;
+										From&nbsp;
 										<span>
 											{hidename ? (
 												<div>Someone</div>

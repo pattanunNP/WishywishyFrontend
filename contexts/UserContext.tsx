@@ -26,7 +26,6 @@ export const UserContextProvider = ({ children }: UserContextProviderProps) => {
 	const [profile, setProfile] = useState<userProps>();
 	const [idToken, setIdToken] = useState<string | null | undefined>();
 	const [accessToken, setAccessToken] = useState<string | null | undefined>();
-	const [cookies, setCookie] = useCookies(["accessToken"]);
 	const [show, setShow] = useState<boolean>(false);
 
 	if (process.env.NODE_ENV !== "production") {

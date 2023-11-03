@@ -10,12 +10,12 @@
 @tailwind utilities;
 
 .btn-primary1 {
-  @apply font-Kanit font-medium mt-5 px-3 py-3 bg-christmas-red-700  xs:w-52 sm:w-52 md:w-64 h-12 rounded-3xl text-center ring-4 ring-white text-white cursor-pointer;
+  @apply font-Kanit font-medium px-3 py-3 bg-christmas-red-700  xs:w-52 sm:w-52 md:w-64 h-12 rounded-3xl text-center ring-4 ring-white text-white cursor-pointer;
 }
 .btn-primary2 {
-  @apply font-Kanit  font-medium mt-5 px-3 py-3 bg-christmas-green-700  xs:w-52 sm:w-52 md:w-64 h-12 rounded-3xl text-center ring-4 ring-white text-white cursor-pointer;
+  @apply font-Kanit  font-medium  px-3 py-3 bg-christmas-green-700  xs:w-52 sm:w-52 md:w-64 h-12 rounded-3xl text-center ring-4 ring-white text-white cursor-pointer;
 }
 
 .btn-primary3 {
-  @apply font-Kanit font-medium mt-5 px-3 py-3 bg-christmas-yellow-700  xs:w-52 sm:w-52 md:w-64 h-12 rounded-3xl text-center ring-4 ring-white text-white cursor-pointer;
+  @apply font-Kanit font-medium  px-3 py-3 bg-christmas-yellow-700  xs:w-52 sm:w-52 md:w-64 h-12 rounded-3xl text-center ring-4 ring-white text-white cursor-pointer;
 }
